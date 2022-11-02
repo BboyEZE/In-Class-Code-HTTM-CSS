@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Form Example</title>
+<meta charset="UTF-8" />
+    <style>
+        #wrapper {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ddffdd;
+            font-family: verdana, arial, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #eeeeee;
+            border: 2px solid #007700;
+        }
+        caption {
+            font-size: 1.25em;
+            padding-bottom: .5em;
+        }
+        td {
+            vertical-align: top;
+            padding: 7px;
+        }
+        select, #myNumber{
+            font-size: .9em;
+        }
+        #buttons {
+            font-size: 1em;
+            text-align: center;
+        }
+        #process {
+            background-color: #ddffdd;
+            font-weight: bold;
+            border: 2px solid #007700;
+        }
+        .label {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Form Example</h1>
+        <form id="student" name="student" action="mainto:andlerpascuali@dupage.edu data" method="post" enctype="text/plain">
+            <table>
+                <caption>Student Data</caption>
+                <tr>
+                    <td class="label">Name:</td>
+                    <td>
+                        <input type="text" id="studentName" size="30"/> &#xA0; &#xA0; &#xA0;
+                        <span class="label">ID:</span>
+                        <input type="password" id="studentID" size="12" /></td>
+                    <td class="label">Birthdate:</td>
+                    <td><input type="date" id="studentBd" /></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Classes Taken</td>
+                    <td><input type="number" id="myNumber" value="0" min="0" max="20" /></td>
+                    <td class="label">Active Student</td>
+                    <td>
+                        <input type="radio" id="activeY" name="active" value="Yes" checked="checked" /><label for="activeY">Yes</label> &#xA0; &#xA0; &#xA0;
+                        <input type="radio" id="activeN" name="active" value="No" /><label for="activeN">No</label></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <fieldset><legend>Favorite Classes</legend>
+                        <input type="checkbox" id="class1" name="1150" value="1150" />
+                        <label for="class1">1150</label> &#xA0; &#xA0; &#xA0;
+                        <input type="checkbox" id="class2" name="1300" value="1300" />
+                        <label for="class2">1300</label>
+                        <input type="checkbox" id="class3" name="1310" value="1310" />
+                        <label for="class3">1310</label>
+                        <input type="checkbox" id="class4" name="2320" value="2320" />
+                        <label for="class4">2320</label>
+                    </fieldset>
+                    </td>
+                    <td>
+                        <span id="rating">0<input type="range" id="myRange" value="50" onclick="mySlider()" /></span> 100</span>&#xA0; &#xA0; &#xA0;[<span id="sliderdemo" style="color:#00aa00;">&#xA0; &#xA0; &#xA0;</span>]
+                        <script>
+                            function mySlider() {
+                                var x = document.getElementById("myRange").value;
+                                document.getElementById("sliderdemo").innerHTML = x;
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Favorite App:</td>
+                    <td><input list="favApp" />
+                        <datalist id="favApp">
+                            <option value="Access">Access</option>
+                            <option value="Excel">Excel</option>
+                            <option value="PowerPoint">PowerPoint</option>
+                            <option value="Word">Word</option>
+                        </datalist>
+                    </td>
+                    <td rowspan="2" class="Label">Favorite Browser:</td>
+                    <td rowspan="2">
+                        <select size="6">
+                            <optgroup label="PC">
+                                <option>Chrome</option>
+                                <option>Firefox</option>
+                            </optgroup>
+                            <optgroup label="Apple">
+                                <option>Opera</option>
+                                <option>Safari</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Favorite Color:</td>
+                    <td><input type="color" id="myColor" value="#007700" /></td>
+                </tr>
+                <tr>
+                    <td class="label">Comments:</td>
+                    <td colspan="3"><textarea id="comments" rows="4" cols="80"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="4" id="buttons">
+                        <input id="process" type="submit" value="Process Form Data" />
+                        <input type="reset" value="Cancel" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
